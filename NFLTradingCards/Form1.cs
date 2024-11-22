@@ -1,4 +1,5 @@
 using NFLTradingCards.Models;
+using System.Numerics;
 
 namespace NFLTradingCards
 {
@@ -52,6 +53,7 @@ namespace NFLTradingCards
             if (playerListBox.SelectedItem is Player selectedPlayer)
             {
                 playerName.Text = selectedPlayer.Name;
+
                 // Update the card display
                 UpdateCardDisplay(selectedPlayer);
             }
@@ -61,6 +63,10 @@ namespace NFLTradingCards
         {
             nameLabel.Text = player.Name;
 
+            passingYardsLabel.Text = $"Passing Yards: {player.PassingYards}";
+            yardsPerAttemptLabel.Text = $"Yards/Attempt: {player.YardsPerAttempt:F2}";
+            touchdownsLabel.Text = $"Touchdowns: {player.Touchdowns}";
+            interceptionsLabel.Text = $"Interceptions: {player.InterceptionsThrown}";
 
             //Background Color based on team
             cardPanel.BackColor = GetTeamColor(player.Team);
@@ -101,5 +107,6 @@ namespace NFLTradingCards
                 default: return Color.Gray;
             }
         }
+
     }
 }

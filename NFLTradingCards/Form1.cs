@@ -1,3 +1,4 @@
+using Microsoft.VisualBasic.ApplicationServices;
 using NFLTradingCards.Models;
 using System.Numerics;
 
@@ -11,7 +12,7 @@ namespace NFLTradingCards
         {
             InitializeComponent();
             LoadPlayers();
-            InitializeListBox();
+            InitializeListBox();      
         }
 
         private void LoadPlayers()
@@ -56,6 +57,28 @@ namespace NFLTradingCards
 
                 // Update the card display
                 UpdateCardDisplay(selectedPlayer);
+
+                // Update the picture display
+                LoadPlayerImage(selectedPlayer);
+            }
+        }
+
+        private void LoadPlayerImage(Player player)
+        {
+            
+            string imageName = player.Name.Replace(" ", "") + ".jpg";
+
+            string projectPath = Directory.GetParent(Application.StartupPath).Parent.Parent.Parent.FullName;
+
+            string imagePath = Path.Combine(projectPath, "playerPics", imageName);
+
+            if (File.Exists(imagePath))
+            {
+                playerPicture.Image = Image.FromFile(imagePath);
+            }
+            else
+            {
+                playerPicture.Image = null; 
             }
         }
 
@@ -75,7 +98,6 @@ namespace NFLTradingCards
 
         private Color GetTeamColor(string team)
         {
-
             //these colors were made using AI
             switch (team)
             {
@@ -107,6 +129,5 @@ namespace NFLTradingCards
                 default: return Color.Gray;
             }
         }
-
     }
 }

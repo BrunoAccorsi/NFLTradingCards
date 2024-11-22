@@ -31,6 +31,7 @@
             playerListBox = new ListBox();
             cardPanel = new Panel();
             panel1 = new Panel();
+            interceptionsLabel = new Label();
             touchdownsLabel = new Label();
             yardsPerAttemptLabel = new Label();
             passingYardsLabel = new Label();
@@ -39,7 +40,6 @@
             nameLabel = new Label();
             teamLabel = new Label();
             statsLabel = new Label();
-            interceptionsLabel = new Label();
             cardPanel.SuspendLayout();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)playerPicture).BeginInit();
@@ -76,6 +76,17 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(256, 171);
             panel1.TabIndex = 2;
+            // 
+            // interceptionsLabel
+            // 
+            interceptionsLabel.AutoSize = true;
+            interceptionsLabel.Font = new Font("Verdana", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            interceptionsLabel.Location = new Point(15, 127);
+            interceptionsLabel.Name = "interceptionsLabel";
+            interceptionsLabel.Size = new Size(51, 18);
+            interceptionsLabel.TabIndex = 5;
+            interceptionsLabel.Text = "label1";
+            interceptionsLabel.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // touchdownsLabel
             // 
@@ -123,9 +134,10 @@
             // 
             // playerPicture
             // 
-            playerPicture.Location = new Point(75, 22);
+            playerPicture.Location = new Point(46, 22);
             playerPicture.Name = "playerPicture";
-            playerPicture.Size = new Size(205, 201);
+            playerPicture.Size = new Size(256, 201);
+            playerPicture.SizeMode = PictureBoxSizeMode.Zoom;
             playerPicture.TabIndex = 0;
             playerPicture.TabStop = false;
             // 
@@ -149,17 +161,6 @@
             statsLabel.Name = "statsLabel";
             statsLabel.Size = new Size(100, 23);
             statsLabel.TabIndex = 0;
-            // 
-            // interceptionsLabel
-            // 
-            interceptionsLabel.AutoSize = true;
-            interceptionsLabel.Font = new Font("Verdana", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            interceptionsLabel.Location = new Point(15, 127);
-            interceptionsLabel.Name = "interceptionsLabel";
-            interceptionsLabel.Size = new Size(51, 18);
-            interceptionsLabel.TabIndex = 5;
-            interceptionsLabel.Text = "label1";
-            interceptionsLabel.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // Form1
             // 

@@ -30,6 +30,7 @@
         {
             playerListBox = new ListBox();
             cardPanel = new Panel();
+            teamPicture = new PictureBox();
             panel1 = new Panel();
             interceptionsLabel = new Label();
             touchdownsLabel = new Label();
@@ -41,6 +42,7 @@
             teamLabel = new Label();
             statsLabel = new Label();
             cardPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)teamPicture).BeginInit();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)playerPicture).BeginInit();
             SuspendLayout();
@@ -57,12 +59,23 @@
             // cardPanel
             // 
             cardPanel.BorderStyle = BorderStyle.FixedSingle;
+            cardPanel.Controls.Add(teamPicture);
             cardPanel.Controls.Add(panel1);
             cardPanel.Controls.Add(playerPicture);
             cardPanel.Location = new Point(218, 12);
             cardPanel.Name = "cardPanel";
-            cardPanel.Size = new Size(350, 424);
+            cardPanel.Size = new Size(350, 423);
             cardPanel.TabIndex = 1;
+            // 
+            // teamPicture
+            // 
+            teamPicture.Location = new Point(211, 19);
+            teamPicture.Margin = new Padding(2);
+            teamPicture.Name = "teamPicture";
+            teamPicture.Size = new Size(63, 54);
+            teamPicture.SizeMode = PictureBoxSizeMode.StretchImage;
+            teamPicture.TabIndex = 4;
+            teamPicture.TabStop = false;
             // 
             // panel1
             // 
@@ -72,9 +85,9 @@
             panel1.Controls.Add(yardsPerAttemptLabel);
             panel1.Controls.Add(passingYardsLabel);
             panel1.Controls.Add(playerName);
-            panel1.Location = new Point(46, 232);
+            panel1.Location = new Point(57, 229);
             panel1.Name = "panel1";
-            panel1.Size = new Size(256, 171);
+            panel1.Size = new Size(238, 171);
             panel1.TabIndex = 2;
             // 
             // interceptionsLabel
@@ -134,9 +147,9 @@
             // 
             // playerPicture
             // 
-            playerPicture.Location = new Point(46, 22);
+            playerPicture.Location = new Point(48, 19);
             playerPicture.Name = "playerPicture";
-            playerPicture.Size = new Size(256, 201);
+            playerPicture.Size = new Size(254, 201);
             playerPicture.SizeMode = PictureBoxSizeMode.Zoom;
             playerPicture.TabIndex = 0;
             playerPicture.TabStop = false;
@@ -166,12 +179,13 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(584, 450);
+            ClientSize = new Size(584, 443);
             Controls.Add(cardPanel);
             Controls.Add(playerListBox);
             Name = "Form1";
             Text = "NFL Trading Cards";
             cardPanel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)teamPicture).EndInit();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)playerPicture).EndInit();
@@ -192,5 +206,6 @@
         private Label yardsPerAttemptLabel;
         private Label touchdownsLabel;
         private Label interceptionsLabel;
+        private PictureBox teamPicture;
     }
 }

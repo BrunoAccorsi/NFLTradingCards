@@ -1,6 +1,4 @@
-using Microsoft.VisualBasic.ApplicationServices;
 using NFLTradingCards.Models;
-using System.Numerics;
 
 namespace NFLTradingCards
 {
@@ -121,7 +119,7 @@ namespace NFLTradingCards
             yardsPerAttemptLabel.Text = $"Yards/Attempt: {player.YardsPerAttempt:F2}";
             touchdownsLabel.Text = $"Touchdowns: {player.Touchdowns}";
             interceptionsLabel.Text = $"Interceptions: {player.InterceptionsThrown}";
-            
+
             // Background Color based on team
             cardPanel.BackColor = GetTeamColor(player.Team);
 

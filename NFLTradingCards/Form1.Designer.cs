@@ -49,11 +49,10 @@
             // 
             // playerListBox
             // 
-            playerListBox.ItemHeight = 25;
-            playerListBox.Location = new Point(17, 20);
-            playerListBox.Margin = new Padding(4, 5, 4, 5);
+            playerListBox.ItemHeight = 15;
+            playerListBox.Location = new Point(12, 12);
             playerListBox.Name = "playerListBox";
-            playerListBox.Size = new Size(284, 704);
+            playerListBox.Size = new Size(200, 424);
             playerListBox.TabIndex = 0;
             playerListBox.SelectedIndexChanged += playerListBox_SelectedIndexChanged;
             // 
@@ -63,17 +62,17 @@
             cardPanel.Controls.Add(teamPicture);
             cardPanel.Controls.Add(panel1);
             cardPanel.Controls.Add(playerPicture);
-            cardPanel.Location = new Point(311, 20);
-            cardPanel.Margin = new Padding(4, 5, 4, 5);
+            cardPanel.Location = new Point(218, 12);
             cardPanel.Name = "cardPanel";
-            cardPanel.Size = new Size(499, 704);
+            cardPanel.Size = new Size(350, 423);
             cardPanel.TabIndex = 1;
             // 
             // teamPicture
             // 
-            teamPicture.Location = new Point(325, 33);
+            teamPicture.Location = new Point(211, 19);
+            teamPicture.Margin = new Padding(2);
             teamPicture.Name = "teamPicture";
-            teamPicture.Size = new Size(90, 90);
+            teamPicture.Size = new Size(63, 54);
             teamPicture.SizeMode = PictureBoxSizeMode.StretchImage;
             teamPicture.TabIndex = 4;
             teamPicture.TabStop = false;
@@ -86,20 +85,18 @@
             panel1.Controls.Add(yardsPerAttemptLabel);
             panel1.Controls.Add(passingYardsLabel);
             panel1.Controls.Add(playerName);
-            panel1.Location = new Point(81, 382);
-            panel1.Margin = new Padding(4, 5, 4, 5);
+            panel1.Location = new Point(57, 229);
             panel1.Name = "panel1";
-            panel1.Size = new Size(340, 285);
+            panel1.Size = new Size(238, 171);
             panel1.TabIndex = 2;
             // 
             // interceptionsLabel
             // 
             interceptionsLabel.AutoSize = true;
             interceptionsLabel.Font = new Font("Verdana", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            interceptionsLabel.Location = new Point(21, 212);
-            interceptionsLabel.Margin = new Padding(4, 0, 4, 0);
+            interceptionsLabel.Location = new Point(15, 127);
             interceptionsLabel.Name = "interceptionsLabel";
-            interceptionsLabel.Size = new Size(81, 28);
+            interceptionsLabel.Size = new Size(51, 18);
             interceptionsLabel.TabIndex = 5;
             interceptionsLabel.Text = "label1";
             interceptionsLabel.TextAlign = ContentAlignment.MiddleCenter;
@@ -108,10 +105,9 @@
             // 
             touchdownsLabel.AutoSize = true;
             touchdownsLabel.Font = new Font("Verdana", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            touchdownsLabel.Location = new Point(21, 167);
-            touchdownsLabel.Margin = new Padding(4, 0, 4, 0);
+            touchdownsLabel.Location = new Point(15, 100);
             touchdownsLabel.Name = "touchdownsLabel";
-            touchdownsLabel.Size = new Size(81, 28);
+            touchdownsLabel.Size = new Size(51, 18);
             touchdownsLabel.TabIndex = 4;
             touchdownsLabel.Text = "label1";
             touchdownsLabel.TextAlign = ContentAlignment.MiddleCenter;
@@ -120,10 +116,9 @@
             // 
             yardsPerAttemptLabel.AutoSize = true;
             yardsPerAttemptLabel.Font = new Font("Verdana", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            yardsPerAttemptLabel.Location = new Point(21, 122);
-            yardsPerAttemptLabel.Margin = new Padding(4, 0, 4, 0);
+            yardsPerAttemptLabel.Location = new Point(15, 73);
             yardsPerAttemptLabel.Name = "yardsPerAttemptLabel";
-            yardsPerAttemptLabel.Size = new Size(81, 28);
+            yardsPerAttemptLabel.Size = new Size(51, 18);
             yardsPerAttemptLabel.TabIndex = 3;
             yardsPerAttemptLabel.Text = "label1";
             yardsPerAttemptLabel.TextAlign = ContentAlignment.MiddleCenter;
@@ -132,10 +127,9 @@
             // 
             passingYardsLabel.AutoSize = true;
             passingYardsLabel.Font = new Font("Verdana", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            passingYardsLabel.Location = new Point(21, 77);
-            passingYardsLabel.Margin = new Padding(4, 0, 4, 0);
+            passingYardsLabel.Location = new Point(15, 46);
             passingYardsLabel.Name = "passingYardsLabel";
-            passingYardsLabel.Size = new Size(81, 28);
+            passingYardsLabel.Size = new Size(51, 18);
             passingYardsLabel.TabIndex = 2;
             passingYardsLabel.Text = "label1";
             passingYardsLabel.TextAlign = ContentAlignment.MiddleCenter;
@@ -144,20 +138,18 @@
             // 
             playerName.AutoSize = true;
             playerName.Font = new Font("Verdana", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            playerName.Location = new Point(21, 17);
-            playerName.Margin = new Padding(4, 0, 4, 0);
+            playerName.Location = new Point(15, 10);
             playerName.Name = "playerName";
-            playerName.Size = new Size(114, 35);
+            playerName.Size = new Size(77, 23);
             playerName.TabIndex = 1;
             playerName.Text = "label1";
             playerName.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // playerPicture
             // 
-            playerPicture.Location = new Point(69, 32);
-            playerPicture.Margin = new Padding(4, 5, 4, 5);
+            playerPicture.Location = new Point(48, 19);
             playerPicture.Name = "playerPicture";
-            playerPicture.Size = new Size(363, 335);
+            playerPicture.Size = new Size(254, 201);
             playerPicture.SizeMode = PictureBoxSizeMode.Zoom;
             playerPicture.TabIndex = 0;
             playerPicture.TabStop = false;
@@ -185,12 +177,11 @@
             // 
             // Form1
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(834, 738);
+            ClientSize = new Size(584, 443);
             Controls.Add(cardPanel);
             Controls.Add(playerListBox);
-            Margin = new Padding(4, 5, 4, 5);
             Name = "Form1";
             Text = "NFL Trading Cards";
             cardPanel.ResumeLayout(false);

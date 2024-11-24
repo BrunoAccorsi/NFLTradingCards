@@ -69,10 +69,10 @@
             // 
             // teamPicture
             // 
-            teamPicture.Location = new Point(211, 19);
+            teamPicture.Location = new Point(231, 19);
             teamPicture.Margin = new Padding(2);
             teamPicture.Name = "teamPicture";
-            teamPicture.Size = new Size(63, 54);
+            teamPicture.Size = new Size(40, 40);
             teamPicture.SizeMode = PictureBoxSizeMode.StretchImage;
             teamPicture.TabIndex = 4;
             teamPicture.TabStop = false;

@@ -89,7 +89,7 @@
             teamPicture.SizeMode = PictureBoxSizeMode.StretchImage;
             teamPicture.TabIndex = 4;
             teamPicture.TabStop = false;
-            //
+            // 
             // panel1
             // 
             panel1.BackColor = Color.WhiteSmoke;

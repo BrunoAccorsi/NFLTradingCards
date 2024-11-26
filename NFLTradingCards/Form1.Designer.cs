@@ -30,6 +30,7 @@
         {
             playerListBox = new ListBox();
             cardPanel = new Panel();
+            lbl_teamName = new Label();
             teamPicture = new PictureBox();
             panel1 = new Panel();
             interceptionsLabel = new Label();
@@ -59,6 +60,7 @@
             // cardPanel
             // 
             cardPanel.BorderStyle = BorderStyle.FixedSingle;
+            cardPanel.Controls.Add(lbl_teamName);
             cardPanel.Controls.Add(teamPicture);
             cardPanel.Controls.Add(panel1);
             cardPanel.Controls.Add(playerPicture);
@@ -67,16 +69,27 @@
             cardPanel.Size = new Size(350, 423);
             cardPanel.TabIndex = 1;
             // 
+            // lbl_teamName
+            // 
+            lbl_teamName.AutoSize = true;
+            lbl_teamName.BackColor = SystemColors.ControlLightLight;
+            lbl_teamName.Font = new Font("Verdana", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lbl_teamName.Location = new Point(78, 19);
+            lbl_teamName.Name = "lbl_teamName";
+            lbl_teamName.Size = new Size(51, 16);
+            lbl_teamName.TabIndex = 2;
+            lbl_teamName.Text = "label1";
+            // 
             // teamPicture
             // 
-            teamPicture.Location = new Point(231, 19);
+            teamPicture.Location = new Point(231, 41);
             teamPicture.Margin = new Padding(2);
             teamPicture.Name = "teamPicture";
             teamPicture.Size = new Size(40, 40);
             teamPicture.SizeMode = PictureBoxSizeMode.StretchImage;
             teamPicture.TabIndex = 4;
             teamPicture.TabStop = false;
-            // 
+            //
             // panel1
             // 
             panel1.BackColor = Color.WhiteSmoke;
@@ -185,6 +198,7 @@
             Name = "Form1";
             Text = "NFL Trading Cards";
             cardPanel.ResumeLayout(false);
+            cardPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)teamPicture).EndInit();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
@@ -207,5 +221,6 @@
         private Label touchdownsLabel;
         private Label interceptionsLabel;
         private PictureBox teamPicture;
+        private Label lbl_teamName;
     }
 }

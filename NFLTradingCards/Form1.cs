@@ -58,6 +58,8 @@ namespace NFLTradingCards
 
                 // Update the picture display
                 LoadPlayerImage(selectedPlayer);
+
+
             }
         }
 
@@ -125,6 +127,9 @@ namespace NFLTradingCards
 
             // Load team picture
             LoadTeamImage(player.Team);
+
+            //Load team name
+            lbl_teamName.Text = player.Team;
         }
 
         private void LoadTeamImage(string team)
@@ -199,5 +204,7 @@ namespace NFLTradingCards
                 LoadPlayerImage(selectedPlayer);
             }
         }
+
+        
     }
 }

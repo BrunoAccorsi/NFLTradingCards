@@ -47,19 +47,22 @@ namespace NFLTradingCards
             playerListBox.DisplayMember = "Name";
         }
 
+        private void renderPlayer(Player selected)
+        {
+            playerName.Text = selected.Name;
+
+            // Update the card display
+            UpdateCardDisplay(selected);
+
+            // Update the picture display
+            LoadPlayerImage(selected);
+        }
+
         private void playerListBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (playerListBox.SelectedItem is Player selectedPlayer)
             {
-                playerName.Text = selectedPlayer.Name;
-
-                // Update the card display
-                UpdateCardDisplay(selectedPlayer);
-
-                // Update the picture display
-                LoadPlayerImage(selectedPlayer);
-
-
+                renderPlayer(selectedPlayer);
             }
         }
 
@@ -191,20 +194,40 @@ namespace NFLTradingCards
                 "New York Giants" => Color.FromArgb(1, 35, 82),
                 _ => Color.Gray,
             };
-        private void PlayerListBox_SelectedIndexChanged(object sender, EventArgs e)
+
+        private void previousPlayerButtonClicked(object sender, EventArgs e)
         {
+            int index = playerListBox.SelectedIndex;
+
+            if (index == 0)
+            {
+                return;
+            }
+
+            playerListBox.SetSelected(index - 1, true);
+
             if (playerListBox.SelectedItem is Player selectedPlayer)
             {
-                playerName.Text = selectedPlayer.Name;
-
-                // Update the card display
-                UpdateCardDisplay(selectedPlayer);
-
-                // Update the picture display
-                LoadPlayerImage(selectedPlayer);
+                renderPlayer(selectedPlayer);
             }
         }
 
-        
+        private void nextPlayerButtonClicked(object sender, EventArgs e)
+        {
+            int index = playerListBox.SelectedIndex;
+
+            if (index == playerListBox.Items.Count - 1)
+            {
+                return;
+            }
+          
+            playerListBox.SetSelected(index + 1, true);
+
+            if (playerListBox.SelectedItem is Player selectedPlayer)
+            {
+                renderPlayer(selectedPlayer);
+            }
+
+        }
     }
 }

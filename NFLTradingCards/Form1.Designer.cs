@@ -30,6 +30,8 @@
         {
             playerListBox = new ListBox();
             cardPanel = new Panel();
+            nextPlayerButton = new Button();
+            previousPlayerButton = new Button();
             lbl_teamName = new Label();
             teamPicture = new PictureBox();
             panel1 = new Panel();
@@ -50,42 +52,71 @@
             // 
             // playerListBox
             // 
-            playerListBox.ItemHeight = 15;
-            playerListBox.Location = new Point(12, 12);
+            playerListBox.Location = new Point(14, 16);
+            playerListBox.Margin = new Padding(3, 4, 3, 4);
             playerListBox.Name = "playerListBox";
-            playerListBox.Size = new Size(200, 424);
+            playerListBox.Size = new Size(228, 564);
             playerListBox.TabIndex = 0;
             playerListBox.SelectedIndexChanged += playerListBox_SelectedIndexChanged;
             // 
             // cardPanel
             // 
             cardPanel.BorderStyle = BorderStyle.FixedSingle;
+            cardPanel.Controls.Add(nextPlayerButton);
+            cardPanel.Controls.Add(previousPlayerButton);
             cardPanel.Controls.Add(lbl_teamName);
             cardPanel.Controls.Add(teamPicture);
             cardPanel.Controls.Add(panel1);
             cardPanel.Controls.Add(playerPicture);
-            cardPanel.Location = new Point(218, 12);
+            cardPanel.Location = new Point(249, 16);
+            cardPanel.Margin = new Padding(3, 4, 3, 4);
             cardPanel.Name = "cardPanel";
-            cardPanel.Size = new Size(350, 423);
+            cardPanel.Size = new Size(400, 563);
             cardPanel.TabIndex = 1;
+            // 
+            // nextPlayerButton
+            // 
+            nextPlayerButton.BackColor = SystemColors.ButtonShadow;
+            nextPlayerButton.Font = new Font("Segoe UI Black", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            nextPlayerButton.ForeColor = SystemColors.HighlightText;
+            nextPlayerButton.Location = new Point(351, 292);
+            nextPlayerButton.Name = "nextPlayerButton";
+            nextPlayerButton.Size = new Size(43, 32);
+            nextPlayerButton.TabIndex = 6;
+            nextPlayerButton.Text = ">";
+            nextPlayerButton.UseVisualStyleBackColor = false;
+            nextPlayerButton.Click += nextPlayerButtonClicked;
+            // 
+            // previousPlayerButton
+            // 
+            previousPlayerButton.BackColor = SystemColors.ButtonShadow;
+            previousPlayerButton.Font = new Font("Segoe UI Black", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            previousPlayerButton.ForeColor = SystemColors.HighlightText;
+            previousPlayerButton.Location = new Point(6, 292);
+            previousPlayerButton.Name = "previousPlayerButton";
+            previousPlayerButton.Size = new Size(43, 32);
+            previousPlayerButton.TabIndex = 5;
+            previousPlayerButton.Text = "<";
+            previousPlayerButton.UseVisualStyleBackColor = false;
+            previousPlayerButton.Click += previousPlayerButtonClicked;
             // 
             // lbl_teamName
             // 
             lbl_teamName.AutoSize = true;
             lbl_teamName.BackColor = SystemColors.ControlLightLight;
             lbl_teamName.Font = new Font("Verdana", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lbl_teamName.Location = new Point(78, 19);
+            lbl_teamName.Location = new Point(66, 35);
             lbl_teamName.Name = "lbl_teamName";
-            lbl_teamName.Size = new Size(51, 16);
+            lbl_teamName.Size = new Size(67, 20);
             lbl_teamName.TabIndex = 2;
             lbl_teamName.Text = "label1";
             // 
             // teamPicture
             // 
-            teamPicture.Location = new Point(231, 41);
-            teamPicture.Margin = new Padding(2);
+            teamPicture.Location = new Point(264, 55);
+            teamPicture.Margin = new Padding(2, 3, 2, 3);
             teamPicture.Name = "teamPicture";
-            teamPicture.Size = new Size(40, 40);
+            teamPicture.Size = new Size(46, 53);
             teamPicture.SizeMode = PictureBoxSizeMode.StretchImage;
             teamPicture.TabIndex = 4;
             teamPicture.TabStop = false;
@@ -98,18 +129,19 @@
             panel1.Controls.Add(yardsPerAttemptLabel);
             panel1.Controls.Add(passingYardsLabel);
             panel1.Controls.Add(playerName);
-            panel1.Location = new Point(57, 229);
+            panel1.Location = new Point(65, 305);
+            panel1.Margin = new Padding(3, 4, 3, 4);
             panel1.Name = "panel1";
-            panel1.Size = new Size(238, 171);
+            panel1.Size = new Size(272, 228);
             panel1.TabIndex = 2;
             // 
             // interceptionsLabel
             // 
             interceptionsLabel.AutoSize = true;
             interceptionsLabel.Font = new Font("Verdana", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            interceptionsLabel.Location = new Point(15, 127);
+            interceptionsLabel.Location = new Point(17, 169);
             interceptionsLabel.Name = "interceptionsLabel";
-            interceptionsLabel.Size = new Size(51, 18);
+            interceptionsLabel.Size = new Size(68, 23);
             interceptionsLabel.TabIndex = 5;
             interceptionsLabel.Text = "label1";
             interceptionsLabel.TextAlign = ContentAlignment.MiddleCenter;
@@ -118,9 +150,9 @@
             // 
             touchdownsLabel.AutoSize = true;
             touchdownsLabel.Font = new Font("Verdana", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            touchdownsLabel.Location = new Point(15, 100);
+            touchdownsLabel.Location = new Point(17, 133);
             touchdownsLabel.Name = "touchdownsLabel";
-            touchdownsLabel.Size = new Size(51, 18);
+            touchdownsLabel.Size = new Size(68, 23);
             touchdownsLabel.TabIndex = 4;
             touchdownsLabel.Text = "label1";
             touchdownsLabel.TextAlign = ContentAlignment.MiddleCenter;
@@ -129,9 +161,9 @@
             // 
             yardsPerAttemptLabel.AutoSize = true;
             yardsPerAttemptLabel.Font = new Font("Verdana", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            yardsPerAttemptLabel.Location = new Point(15, 73);
+            yardsPerAttemptLabel.Location = new Point(17, 97);
             yardsPerAttemptLabel.Name = "yardsPerAttemptLabel";
-            yardsPerAttemptLabel.Size = new Size(51, 18);
+            yardsPerAttemptLabel.Size = new Size(68, 23);
             yardsPerAttemptLabel.TabIndex = 3;
             yardsPerAttemptLabel.Text = "label1";
             yardsPerAttemptLabel.TextAlign = ContentAlignment.MiddleCenter;
@@ -140,9 +172,9 @@
             // 
             passingYardsLabel.AutoSize = true;
             passingYardsLabel.Font = new Font("Verdana", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            passingYardsLabel.Location = new Point(15, 46);
+            passingYardsLabel.Location = new Point(17, 61);
             passingYardsLabel.Name = "passingYardsLabel";
-            passingYardsLabel.Size = new Size(51, 18);
+            passingYardsLabel.Size = new Size(68, 23);
             passingYardsLabel.TabIndex = 2;
             passingYardsLabel.Text = "label1";
             passingYardsLabel.TextAlign = ContentAlignment.MiddleCenter;
@@ -151,18 +183,19 @@
             // 
             playerName.AutoSize = true;
             playerName.Font = new Font("Verdana", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            playerName.Location = new Point(15, 10);
+            playerName.Location = new Point(17, 13);
             playerName.Name = "playerName";
-            playerName.Size = new Size(77, 23);
+            playerName.Size = new Size(95, 29);
             playerName.TabIndex = 1;
             playerName.Text = "label1";
             playerName.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // playerPicture
             // 
-            playerPicture.Location = new Point(48, 19);
+            playerPicture.Location = new Point(55, 25);
+            playerPicture.Margin = new Padding(3, 4, 3, 4);
             playerPicture.Name = "playerPicture";
-            playerPicture.Size = new Size(254, 201);
+            playerPicture.Size = new Size(290, 268);
             playerPicture.SizeMode = PictureBoxSizeMode.Zoom;
             playerPicture.TabIndex = 0;
             playerPicture.TabStop = false;
@@ -190,11 +223,12 @@
             // 
             // Form1
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(584, 443);
+            ClientSize = new Size(667, 591);
             Controls.Add(cardPanel);
             Controls.Add(playerListBox);
+            Margin = new Padding(3, 4, 3, 4);
             Name = "Form1";
             Text = "NFL Trading Cards";
             cardPanel.ResumeLayout(false);
@@ -222,5 +256,7 @@
         private Label interceptionsLabel;
         private PictureBox teamPicture;
         private Label lbl_teamName;
+        private Button previousPlayerButton;
+        private Button nextPlayerButton;
     }
 }
